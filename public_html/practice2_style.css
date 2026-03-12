@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#text {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+#controls label {
+    display: block;
+    margin-top: 0.5rem;
+}
+#controls .rgb-group {
+    display: flex;
+    gap: 0.5rem;
+}
+#controls .rgb-group input {
+    flex: 1;
+    width: auto;
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    box-sizing: border-box;
+}
+#controls input[type="number"] {
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    box-sizing: border-box;
+}
+#applyBtn {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+}

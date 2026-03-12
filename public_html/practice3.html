@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 3</title>
+</head>
+<body>
+    <h1>Password verification</h1>
+    <form id="pwForm" onsubmit="return false;">
+        <label>
+            Enter password:
+            <input type="password" id="pw1">
+        </label>
+        <br>
+        <label>
+            Re-enter password:
+            <input type="password" id="pw2">
+        </label>
+        <br>
+        <button id="checkBtn">Check</button>
+    </form>
+
+    <script>
+        document.getElementById('checkBtn').addEventListener('click', () => {
+            var p1 = document.getElementById('pw1').value;
+            var p2 = document.getElementById('pw2').value;
+            if (p1.length < 8) {
+                alert('Password must be at least 8 characters');
+            } else if (p1 !== p2) {
+                alert('Passwords do not match');
+            } else {
+                alert('Passwords are matched');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Practice 2</title>
+    <link rel="stylesheet" href="practice2_style.css">
+</head>
+<body>
+    <main>
+        <h1>Dynamic Paragraph Styling</h1>
+        <p id="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+        </p>
+        <div id="controls">
+            <fieldset>
+                <legend>Paragraph color</legend>
+                <div class="rgb-group">
+                    <input type="number" id="paraR" min="0" max="255" placeholder="R">
+                    <input type="number" id="paraG" min="0" max="255" placeholder="G">
+                    <input type="number" id="paraB" min="0" max="255" placeholder="B">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Border color</legend>
+                <div class="rgb-group">
+                    <input type="number" id="borderR" min="0" max="255" placeholder="R">
+                    <input type="number" id="borderG" min="0" max="255" placeholder="G">
+                    <input type="number" id="borderB" min="0" max="255" placeholder="B">
+                </div>
+            </fieldset>
+
+            <label for="borderWidth">Border width (px):</label>
+            <input type="number" id="borderWidth" min="0" value="1">
+            <button id="applyBtn">Apply</button>
+        </div>
+    </main>
+
+    <script>
+        function makeRGB(r,g,b) {
+            return `rgb(${r},${g},${b})`;
+        }
+
+        document.getElementById('applyBtn').addEventListener('click', () => {
+            const para = document.getElementById('text');
+            const pR = document.getElementById('paraR').value;
+            const pG = document.getElementById('paraG').value;
+            const pB = document.getElementById('paraB').value;
+            const bR = document.getElementById('borderR').value;
+            const bG = document.getElementById('borderG').value;
+            const bB = document.getElementById('borderB').value;
+            const bw = document.getElementById('borderWidth').value;
+
+            para.style.color = makeRGB(pR, pG, pB);
+            para.style.borderColor = makeRGB(bR, bG, bB);
+            para.style.borderWidth = bw + 'px';
+        });
+    </script>
+</body>
+</html>
